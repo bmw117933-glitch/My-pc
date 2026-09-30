@@ -1,1 +1,19 @@
+name: Windows PC
 
+on:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-2025
+
+    steps:
+      - name: Check Windows
+        run: |
+          systeminfo
+          echo "Windows runner is working!"
+
+      - name: Keep runner alive
+        run: |
+          echo "Runner will stay active for testing."
+          timeout /t 21600 /nobreak
